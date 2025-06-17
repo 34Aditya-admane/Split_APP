@@ -43,7 +43,9 @@ app.get("/expenses", async (req, res) => {
   const expenses = await Expense.find();
   res.json({ success: true, data: expenses });
 });
-
+app.get("/",(req,res)=>{
+  res.send("Split_App")
+})
 app.post("/expenses", async (req, res) => {
   try {
     const { amount, description, paid_by, split } = req.body;
